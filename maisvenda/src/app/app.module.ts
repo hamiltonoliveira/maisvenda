@@ -5,10 +5,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

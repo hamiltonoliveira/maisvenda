@@ -1,0 +1,30 @@
+h1{
+ color: white;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-size: medium;
+}
+
+mat-sidenav-container {
+  position: fixed;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  min-width: 100%;
+ }
+ mat-toolbar{
+  background-color: #77628c;
+ }
+
+.sidenav-color{
+  background-color: #fafafa;
+}
+
+  div.janela {
+    color:#ffffff;
+    position: absolute;
+	  left: 100%;
+    margin-left:-40px;
+  }
+
+
+

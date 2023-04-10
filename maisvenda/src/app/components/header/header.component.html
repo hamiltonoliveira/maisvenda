@@ -1,13 +1,17 @@
-<mat-toolbar color="warn">
+<mat-toolbar >
    <mat-toolbar-row>
      <button mat-icon-button (click)="onSelect()">
-       <mat-icon >menu</mat-icon>
+       <mat-icon style="color:#fff;">menu</mat-icon>
      </button>
+     <h1>Pedidos </h1>
+     <div class="janela">
+     <fa-icon [icon]="['fas', 'user']"></fa-icon>
+    </div>
    </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav opened={{liga}}>
+  <mat-sidenav #sidenav opened={{liga}} class="sidenav-color">
      <mat-nav-list>
        <a mat-list-item><fa-icon [icon]="['fas', 'house']"></fa-icon> Home</a>
        <a mat-list-item><fa-icon [icon]="['fas', 'calendar']"></fa-icon> Pedido </a>
@@ -16,7 +20,7 @@
      </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div style="height: 99vh;">
+    <div>
 
     </div>
   </mat-sidenav-content>

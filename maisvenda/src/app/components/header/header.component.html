@@ -3,9 +3,9 @@
      <button mat-icon-button (click)="onSelect()">
        <mat-icon style="color:#fff;">menu</mat-icon>
      </button>
-     <h1>Pedidos </h1>
+     <h1>+ Venda</h1>
      <div class="janela">
-     <fa-icon [icon]="['fas', 'user']"></fa-icon>
+     <fa-icon [icon]="['fas', 'user']" class="avatar" routerLink="/login" (click)="onSelect()"></fa-icon>
     </div>
    </mat-toolbar-row>
 </mat-toolbar>
@@ -13,15 +13,15 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav opened={{liga}} class="sidenav-color">
      <mat-nav-list>
-       <a mat-list-item><fa-icon [icon]="['fas', 'house']"></fa-icon> Home</a>
-       <a mat-list-item><fa-icon [icon]="['fas', 'calendar']"></fa-icon> Pedido </a>
-       <a mat-list-item><fa-icon [icon]="['fas', 'calendar-week']"></fa-icon> Extrato</a>
-       <a mat-list-item><fa-icon [icon]="['fas', 'globe']"></fa-icon> Sincronizar</a>
+       <a mat-list-item (click)="onSelect()"><fa-icon [icon]="['fas', 'house']"></fa-icon><span class="mat-list-item-color">Home</span></a>
+       <a mat-list-item (click)="onSelect()"><fa-icon [icon]="['fas', 'calendar']"></fa-icon><span class="mat-list-item-color">Pedido</span></a>
+       <a mat-list-item (click)="onSelect()"><fa-icon [icon]="['fas', 'calendar-week']"></fa-icon><span class="mat-list-item-color">Extrato</span></a>
+       <a mat-list-item routerLink="/dash" (click)="onSelect()"><fa-icon [icon]="['fas', 'globe']"></fa-icon><span class="mat-list-item-color">Sincronizar</span></a>
      </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <div>
-
+       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,6 +1,5 @@
 h1{
  color: white;
- font-family: Verdana, Geneva, Tahoma, sans-serif;
  font-size: medium;
 }
 
@@ -12,11 +11,22 @@ mat-sidenav-container {
   min-width: 100%;
  }
  mat-toolbar{
-  background-color: #77628c;
+  background-color: #FF4081;
+ }
+
+  .mat-list-item-color{
+      color: #90A4AE;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+ .avatar{
+  color: #ffffff;
+  font-size: medium;
  }
 
 .sidenav-color{
-  background-color: #fafafa;
+  background-color: #ffffff;
 }
 
   div.janela {

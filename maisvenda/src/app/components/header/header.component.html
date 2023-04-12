@@ -34,7 +34,7 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav opened={{liga}} class="sidenav-color">
      <mat-nav-list>
-       <a mat-list-item (click)="onSelect()"><fa-icon [icon]="['fas', 'house']"></fa-icon><span class="mat-list-item-color">Home</span></a>
+       <a mat-list-item routerLink="/" (click)="onSelect()"><fa-icon [icon]="['fas', 'house']"></fa-icon><span class="mat-list-item-color">Home</span></a>
        <a mat-list-item (click)="onSelect()"><fa-icon [icon]="['fas', 'calendar']"></fa-icon><span class="mat-list-item-color">Pedido</span></a>
        <a mat-list-item (click)="onSelect()"><fa-icon [icon]="['fas', 'calendar-week']"></fa-icon><span class="mat-list-item-color">Extrato</span></a>
      </mat-nav-list>

@@ -3,9 +3,31 @@
      <button mat-icon-button (click)="onSelect()">
        <mat-icon style="color:#fff;">menu</mat-icon>
      </button>
-     <h1>+ Venda</h1>
+     <h1><mat-icon style="color:#fff;">sell</mat-icon><span class="TitleLogo">(+)venda</span></h1>
      <div class="janela">
+
+     <!--
      <fa-icon [icon]="['fas', 'user']" class="avatar" routerLink="/login" (click)="onSelect()"></fa-icon>
+     -->
+
+     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/login" (click)="onSelect()">
+        <mat-icon>login</mat-icon>
+        <span class="mat-list-item-color">Login</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span class="mat-list-item-color">Logout</span>
+      </button>
+      <button mat-menu-item routerLink="/config" (click)="onSelect()">
+        <mat-icon>settings</mat-icon>
+        <span class="mat-list-item-color">Configurar</span>
+      </button>
+    </mat-menu>
+
     </div>
    </mat-toolbar-row>
 </mat-toolbar>

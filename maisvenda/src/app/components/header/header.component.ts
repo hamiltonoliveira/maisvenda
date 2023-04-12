@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
   liga:boolean = false
 
   public ngOnInit() {
-   this.liga =true
+   this.liga = true
   }
 
   public onSelect():void{

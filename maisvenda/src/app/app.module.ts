@@ -17,7 +17,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { IconsModule } from './icons/icons.module';
+import { MatMenuModule } from '@angular/material/menu';
 import { LoginComponent } from './components/login/login.component';
+import { ConfigurarComponent } from './components/configurar/configurar.component';
 
 
 @NgModule({
@@ -25,13 +27,15 @@ import { LoginComponent } from './components/login/login.component';
     AppComponent,
     DashboardComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    ConfigurarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     FormsModule,
+    MatMenuModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,

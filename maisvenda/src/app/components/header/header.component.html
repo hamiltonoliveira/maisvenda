@@ -5,11 +5,6 @@
      </button>
      <h1><mat-icon style="color:#fff;">sell</mat-icon><span class="TitleLogo">(+)venda</span></h1>
      <div class="janela">
-
-     <!--
-     <fa-icon [icon]="['fas', 'user']" class="avatar" routerLink="/login" (click)="onSelect()"></fa-icon>
-     -->
-
      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
       <mat-icon>more_vert</mat-icon>
     </button>
@@ -26,6 +21,10 @@
         <mat-icon>settings</mat-icon>
         <span class="mat-list-item-color">Configurar</span>
       </button>
+      <button mat-menu-item routerLink="/dash" (click)="onSelect()">
+        <mat-icon>language</mat-icon>
+        <span class="mat-list-item-color">Sincronizar</span>
+      </button>
     </mat-menu>
 
     </div>
@@ -38,7 +37,6 @@
        <a mat-list-item (click)="onSelect()"><fa-icon [icon]="['fas', 'house']"></fa-icon><span class="mat-list-item-color">Home</span></a>
        <a mat-list-item (click)="onSelect()"><fa-icon [icon]="['fas', 'calendar']"></fa-icon><span class="mat-list-item-color">Pedido</span></a>
        <a mat-list-item (click)="onSelect()"><fa-icon [icon]="['fas', 'calendar-week']"></fa-icon><span class="mat-list-item-color">Extrato</span></a>
-       <a mat-list-item routerLink="/dash" (click)="onSelect()"><fa-icon [icon]="['fas', 'globe']"></fa-icon><span class="mat-list-item-color">Sincronizar</span></a>
      </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

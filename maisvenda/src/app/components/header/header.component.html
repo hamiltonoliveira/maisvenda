@@ -3,9 +3,9 @@
      <button mat-icon-button (click)="onSelect()">
        <mat-icon style="color:#fff;">menu</mat-icon>
      </button>
-     <h1><mat-icon style="color:#fff;">sell</mat-icon><span class="TitleLogo">(+)venda</span></h1>
+     <h1><mat-icon style="color:#fff;">sell</mat-icon><span class="TitleLogo">(+)Encarte</span></h1>
      <div class="janela">
-     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
@@ -34,9 +34,9 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav opened={{liga}} class="sidenav-color">
      <mat-nav-list>
-       <a mat-list-item routerLink="/" (click)="onSelect()"><fa-icon [icon]="['fas', 'house']"></fa-icon><span class="mat-list-item-color">Home</span></a>
-       <a mat-list-item (click)="onSelect()"><fa-icon [icon]="['fas', 'calendar']"></fa-icon><span class="mat-list-item-color">Pedido</span></a>
-       <a mat-list-item (click)="onSelect()"><fa-icon [icon]="['fas', 'calendar-week']"></fa-icon><span class="mat-list-item-color">Extrato</span></a>
+       <a mat-list-item routerLink="/" (click)="onSelect()"><mat-icon style="color:#000;">home</mat-icon><span class="TitleMenu">Home</span></a>
+       <a mat-list-item routerLink="/lista" (click)="onSelect()"><mat-icon style="color:#000;">fact_check</mat-icon><span class="TitleMenu">Lista de produtos</span></a>
+       <a mat-list-item (click)="onSelect()"><mat-icon style="color:#000;">manage_search</mat-icon><span class="TitleMenu">Histórico</span></a>
      </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -5,12 +5,16 @@ import { ConfigurarComponent } from "./components/configurar/configurar.componen
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { HomeComponent } from "./components/home/home.component";
 import { LoginComponent } from "./components/login/login.component";
+import { CadastroComponent } from "./components/cadastro/cadastro.component";
+import { ListaComponent } from "./components/lista/lista.component";
 
 const routers:Routes =  [
   { path:'', component:HomeComponent },
   { path:'dash', component:DashboardComponent },
   { path:'login', component:LoginComponent },
-  { path:'config', component:ConfigurarComponent }
+  { path:'config', component:ConfigurarComponent },
+  { path:'cadastro', component:CadastroComponent },
+  { path:'lista', component:ListaComponent },
 ]
 @NgModule({
   declarations: [],

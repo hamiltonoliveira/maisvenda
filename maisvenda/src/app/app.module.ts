@@ -19,6 +19,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -28,6 +30,9 @@ import { HomeComponent } from './components/home/home.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ListaComponent } from './components/lista/lista.component';
 
+import { MatInputModule } from '@angular/material/input';
+
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -47,8 +52,14 @@ import { ListaComponent } from './components/lista/lista.component';
     FormsModule,
     IconsModule,
     MatButtonModule,
-    MatFormFieldModule,
+    MatCardModule,
 
+    MatFormFieldModule,
+    MatInputModule,
+
+    MatGridListModule,
+
+    MatSelectModule,
     MatIconModule,
     MatListModule,
     MatMenuModule,

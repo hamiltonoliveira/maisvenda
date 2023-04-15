@@ -9,7 +9,8 @@ import { CadastroComponent } from "./components/cadastro/cadastro.component";
 import { ListaComponent } from "./components/lista/lista.component";
 
 const routers:Routes =  [
-  { path:'', component:HomeComponent },
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path:'home', component:HomeComponent },
   { path:'dash', component:DashboardComponent },
   { path:'login', component:LoginComponent },
   { path:'config', component:ConfigurarComponent },

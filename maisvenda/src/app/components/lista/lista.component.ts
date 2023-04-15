@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,7 +8,13 @@ import { Component } from '@angular/core';
 })
 export class ListaComponent {
   title="Lista de produtos - cadastro"
+  preco:any=''
 
 
+  reverter(){
+
+
+   this.preco  =  this.preco.replace(/[^\d]+/gi,'');
+  }
 }
 

@@ -18,9 +18,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
+
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -30,10 +32,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ListaComponent } from './components/lista/lista.component';
 
-import { MatInputModule } from '@angular/material/input';
-
-import { MatGridListModule } from '@angular/material/grid-list';
-
+import { NgxMaskModule } from 'ngx-mask';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,21 +52,25 @@ import { MatGridListModule } from '@angular/material/grid-list';
     IconsModule,
     MatButtonModule,
     MatCardModule,
-
     MatFormFieldModule,
     MatInputModule,
-
     MatGridListModule,
-
     MatSelectModule,
     MatIconModule,
     MatListModule,
     MatMenuModule,
     MatSidenavModule,
     MatToolbarModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters: false // ao salvar, vai manter a mascara
+    }),
+
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,7 +3,7 @@
   <li  *ngFor="let item of Lojas">
     <mat-card class="matcard">
       <mat-card-content>
-        <img src= {{item.img}} class="img">
+        <img src= {{item.img}} class="img" (click)="selected(item)">
       </mat-card-content>
     </mat-card>
   </li>

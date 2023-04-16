@@ -1,8 +1,12 @@
 <div class="container">
    <span class="title">{{title}}</span>
 
-   <app-display-lojas></app-display-lojas>
 
+   <div *ngIf="LojaNome">
+    <span class="lojaDescricao">Mercado:{{LojaNome}}</span>
+   </div>
+
+   <app-display-lojas></app-display-lojas>
 
     <mat-form-field appearance="outline">
       <mat-label>Código de barra</mat-label>
@@ -24,5 +28,8 @@
       <input matInput placeholder="Quantidade" type="text" mask="000" min="1" max="5"/>
     </mat-form-field>
 
+    <button mat-mini-fab color="accent" (click)="selected()">
+      <mat-icon>plus_one</mat-icon>
+    </button>
 
 </div>

@@ -33,6 +33,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ListaComponent } from './components/lista/lista.component';
 
 import { NgxMaskModule } from 'ngx-mask';
+import { DisplayLojasComponent } from './components/display-lojas/display-lojas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { NgxMaskModule } from 'ngx-mask';
     LoginComponent,
     CadastroComponent,
     ListaComponent,
+    DisplayLojasComponent,
   ],
   imports: [
     BrowserModule,

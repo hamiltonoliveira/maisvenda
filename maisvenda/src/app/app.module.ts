@@ -34,6 +34,7 @@ import { ListaComponent } from './components/lista/lista.component';
 
 import { NgxMaskModule } from 'ngx-mask';
 import { DisplayLojasComponent } from './components/display-lojas/display-lojas.component';
+
 @NgModule({
   declarations: [
     AppComponent,

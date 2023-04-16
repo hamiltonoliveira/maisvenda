@@ -13,20 +13,14 @@ mat-sidenav-container {
  mat-toolbar{
   background-color: #FF4081;
  }
-
-  .mat-list-item-color{
+  .mat-list-item-color
+  {
       color: #90A4AE;
       margin-left: 10px;
       cursor: pointer;
-    }
-
-  .avatar{
-  color: #ffffff;
-  font-size: medium;
- }
-
+  }
 .sidenav-color{
-  background-color: #ffffff;
+  background-color: rgb(250, 249, 246);
 }
 
  div.janela {
@@ -35,20 +29,18 @@ mat-sidenav-container {
 	  left: 100%;
     margin-left:-60px;
   }
-
   .TitleLogo{
     position: relative;
     top:-8px;
     margin-left: 6px;
     font-family:'Courier New', Courier, monospace;
   }
-
   .TitleMenu{
     position: relative;
     top: -5px;
     margin-left: 6px;
     font-family:'Courier New', Courier, monospace;
-    color:  hsl(0, 0%, 43%);
+    color: black;
   }
 
 

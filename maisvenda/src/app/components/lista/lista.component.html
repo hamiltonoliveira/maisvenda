@@ -1,6 +1,4 @@
 <div class="container">
-   <span class="title">{{title}}</span>
-
 
    <div *ngIf="LojaNome">
     <span class="lojaDescricao">Mercado:{{LojaNome}}</span>
@@ -10,26 +8,32 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Código de barra</mat-label>
-      <input matInput placeholder="Código do produto" />
+      <input matInput placeholder="Código do produto" disabled={{habilita}} />
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Nome do produto</mat-label>
-      <input matInput placeholder="Nome" />
+      <input matInput placeholder="Nome" disabled={{habilita}}/>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Preço</mat-label>
-      <input matInput placeholder="Preço" type="text"  name="preco" mask="separator.2" thousandSeparator="." />
+      <input matInput disabled={{habilita}} placeholder="Preço" type="text"  name="preco" mask="separator.2" thousandSeparator="." />
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Quantidade</mat-label>
-      <input matInput placeholder="Quantidade" type="text" mask="000" min="1" max="5"/>
+      <input matInput disabled={{habilita}} placeholder="Quantidade" type="text" mask="000" min="1" max="5"/>
     </mat-form-field>
 
+<mat-tab-group>
+  <mat-tab label="Habilitar a digitação" class="mattab">
     <button mat-mini-fab color="accent" (click)="selected()">
       <mat-icon>plus_one</mat-icon>
     </button>
+  </mat-tab>
+  <mat-tab label="Inserir na lista" class="mattab">
+  </mat-tab>
+</mat-tab-group>
 
 </div>

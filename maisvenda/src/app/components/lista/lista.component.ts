@@ -1,6 +1,5 @@
 
 import { Component } from '@angular/core';
-import { ILojas } from 'src/app/interfaces/lojas';
 
 @Component({
   selector: 'app-lista',
@@ -10,11 +9,12 @@ import { ILojas } from 'src/app/interfaces/lojas';
 export class ListaComponent {
   localStorage: any;
 
-  title="Lista de compras"
   preco:any=''
   Loja?:any
   LojaNome?:string
   id:number= 0
+
+  habilita:boolean = true
 
   async selected(){
     if(localStorage.getItem('Loja')){
@@ -22,6 +22,7 @@ export class ListaComponent {
       let x = JSON.parse(this.Loja)
       this.LojaNome = x.nome
       this.id = x.id
+      this.habilita = false
      }
    }
 

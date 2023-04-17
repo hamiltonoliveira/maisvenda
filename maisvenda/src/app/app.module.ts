@@ -22,7 +22,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -63,6 +63,7 @@ import { DisplayLojasComponent } from './components/display-lojas/display-lojas.
     MatListModule,
     MatMenuModule,
     MatSidenavModule,
+    MatTabsModule,
     MatToolbarModule,
     AppRoutingModule,
 

@@ -1,41 +1,64 @@
 <div class="container">
+  <div *ngIf="LojaNome">
+    <span class="lojaDescricao">Mercado:{{ LojaNome }}</span>
+  </div>
 
-   <div *ngIf="LojaNome">
-    <span class="lojaDescricao">Mercado:{{LojaNome}}</span>
-   </div>
+  <app-display-lojas></app-display-lojas>
 
-   <app-display-lojas></app-display-lojas>
+  <mat-form-field appearance="outline">
+    <mat-label>Código de barra</mat-label>
+    <input matInput placeholder="Código do produto" disabled="{{ habilita }}" />
+  </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Código de barra</mat-label>
-      <input matInput placeholder="Código do produto" disabled={{habilita}} />
-    </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Nome do produto</mat-label>
+    <input matInput placeholder="Nome" disabled="{{ habilita }}" />
+  </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Nome do produto</mat-label>
-      <input matInput placeholder="Nome" disabled={{habilita}}/>
-    </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Preço</mat-label>
+    <input
+      matInput
+      disabled="{{ habilita }}"
+      placeholder="Preço"
+      type="text"
+      name="preco"
+      mask="separator.2"
+      thousandSeparator="."
+    />
+  </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Preço</mat-label>
-      <input matInput disabled={{habilita}} placeholder="Preço" type="text"  name="preco" mask="separator.2" thousandSeparator="." />
-    </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Quantidade</mat-label>
+    <input
+      matInput
+      disabled="{{ habilita }}"
+      placeholder="Quantidade"
+      type="text"
+      mask="000"
+      min="1"
+      max="5"
+    />
+  </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Quantidade</mat-label>
-      <input matInput disabled={{habilita}} placeholder="Quantidade" type="text" mask="000" min="1" max="5"/>
-    </mat-form-field>
-
-<mat-tab-group color="warn">
-  <mat-tab label="Habilitar a digitação">
-    <button mat-mini-fab color="accent" (click)="selected()">
-      <mat-icon>plus_one</mat-icon>
-    </button>
-  </mat-tab>
-  <mat-tab label="Digitação">
-  </mat-tab>
-  <mat-tab label="Lançamentos">
-  </mat-tab>
-</mat-tab-group>
-
+  <mat-tab-group color="warn">
+    <mat-tab label="Habilitar a digitação">
+      <button mat-mini-fab [matMenuTriggerFor]="menu" color="accent">
+        <mat-icon>plus_one</mat-icon>
+      </button>
+    </mat-tab>
+    <mat-tab label="Digitação"> </mat-tab>
+  </mat-tab-group>
 </div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="selected()">
+    <mat-icon>videocam</mat-icon>
+    <span>Avitar</span>
+  </button>
+
+  <button mat-menu-item>
+    <mat-icon>videocam_off</mat-icon>
+    <span>Desativar</span>
+  </button>
+</mat-menu>

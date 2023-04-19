@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import  { ILojas } from  './../../interfaces/lojas';
+import { LocalStoarageService } from 'src/app/service/local-stoarage.service';
 
 @Component({
   selector: 'app-display-lojas',
@@ -8,6 +9,10 @@ import  { ILojas } from  './../../interfaces/lojas';
   styleUrls: ['./display-lojas.component.scss']
 })
 export class DisplayLojasComponent {
+
+  constructor(localStorage: LocalStoarageService) {
+  }
+
   SelectedLoja?: ILojas;
 
  Lojas: ILojas[] = [

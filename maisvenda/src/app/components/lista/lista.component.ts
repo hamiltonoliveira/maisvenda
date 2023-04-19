@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
+import { LocalStoarageService } from 'src/app/service/local-stoarage.service';
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
   styleUrls: ['./lista.component.scss']
 })
 export class ListaComponent {
-  localStorage: any;
 
+  constructor(localStorage: LocalStoarageService) {
+  }
+
+  localStorage: any;
   preco:any=''
   Loja?:any
   LojaNome?:string

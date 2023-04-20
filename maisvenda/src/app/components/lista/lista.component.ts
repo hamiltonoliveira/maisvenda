@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DbService } from 'src/app/service/db.service';
 import { LocalStoarageService } from 'src/app/service/local-stoarage.service';
 @Component({
   selector: 'app-lista',
@@ -7,8 +8,14 @@ import { LocalStoarageService } from 'src/app/service/local-stoarage.service';
 })
 export class ListaComponent {
 
-  constructor(localStorage: LocalStoarageService) {
+  constructor(localStorage: LocalStoarageService, private db:DbService) {
+   this.InserirTable()
   }
+
+  InserirTable(){
+    this.db.addRecord('111','222','333','444')
+  }
+
 
   localStorage: any;
   preco:any=''

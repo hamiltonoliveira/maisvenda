@@ -1,0 +1,73 @@
+
+import Dexie from 'dexie';
+
+// Defina o esquema do banco de dados
+interface MyDatabaseSchema {
+  myTable: {
+    id: number;
+    name: string;
+    age: number;
+  };
+}
+
+// Crie a classe Dexie para interagir com o banco de dados
+class MyDatabase extends Dexie {
+  myTable: Dexie.Table<MyDatabaseSchema, number>;
+
+  constructor(databaseName: string) {
+    super(databaseName);
+    // Defina o nome da tabela e as colunas
+    this.version(1).stores({
+      myTable: '++id, name, age',
+    });
+    // Obtenha a referência à tabela
+    this.myTable = this.table('myTable');
+  }
+
+  // Método para adicionar um registro à tabela
+  async addRecord(name: string, age: number): Promise<number> {
+    const record = { name, age };
+    return this.myTable.add(record);
+  }
+
+  // Método para consultar um registro na tabela pelo ID
+  async getRecordById(id: number): Promise<MyDatabaseSchema['myTable'] | undefined> {
+    return this.myTable.get(id);
+  }
+
+  // Método para excluir um registro da tabela pelo ID
+  async deleteRecordById(id: number): Promise<void> {
+    await this.myTable.delete(id);
+  }
+}
+
+// Exemplo de uso da classe MyDatabase
+const myDatabase = new MyDatabase('myDatabase');
+
+// Adicionar um registro
+myDatabase.addRecord('João', 35).then((id) => {
+  console.log(`Registro adicionado com sucesso! ID: ${id}`);
+}).catch((error) => {
+  console.error(`Erro ao adicionar registro: ${error}`);
+});
+
+// Consultar um registro pelo ID
+myDatabase.getRecordById(1).then((record) => {
+  if (record) {
+    console.log(`Registro encontrado: ${record.name}, ${record.age} anos`);
+  } else {
+    console.log('Registro não encontrado.');
+  }
+}).catch((error) => {
+  console.error(`Erro ao consultar registro: ${error}`);
+});
+
+// Excluir um registro pelo ID
+myDatabase.deleteRecordById(1).then(() => {
+  console.log('Registro excluído com sucesso!');
+}).catch((error) => {
+  console.error(`Erro ao excluir registro: ${error}`);
+});
+
+
+

@@ -7,18 +7,17 @@ import Dexie  from 'dexie';
 export class DbService extends Dexie {
 
   constructor() {
-    super("compraDB");                       //database name 'DexieDB'
+    super("compraDB");
     this.version(1).stores({
-      listaTB: '++id' //'myStore1' table, 'empId' primary key
+      listaTB: '++id'
     });
   }
 
-   addRecord(_codbarra:any, _nome:any, _preco:any, _quantidade:any ): void {
-    this.open()
+ addRecord(_codmercado:any, _codbarra:any, _nome:any, _preco:any, _quantidade:any ): void {
+   this.open()
     .then(data => console.log("DB Opened"))
     .catch(err => console.log(err.message))
      this.table('listaTB')
-    .add({codbarra: _codbarra, nome: _nome, preco:_preco, quantidade:_quantidade})
+    .add({codmercado:_codmercado, codbarra: _codbarra, nome: _nome, preco:_preco, quantidade:_quantidade})
   }
-
 }

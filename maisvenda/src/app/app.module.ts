@@ -35,6 +35,7 @@ import { ListaComponent } from './components/lista/lista.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { DisplayLojasComponent } from './components/display-lojas/display-lojas.component';
 
+import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +67,7 @@ import { DisplayLojasComponent } from './components/display-lojas/display-lojas.
     MatTabsModule,
     MatToolbarModule,
     AppRoutingModule,
+    BarcodeScannerLivestreamModule,
 
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false // ao salvar, vai manter a mascara

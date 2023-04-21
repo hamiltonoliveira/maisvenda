@@ -1,17 +1,44 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { DbService } from 'src/app/service/db.service';
 import { LocalStoarageService } from 'src/app/service/local-stoarage.service';
 
+import { BarcodeScannerLivestreamComponent } from "ngx-barcode-scanner";
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
   styleUrls: ['./lista.component.scss']
 })
 
-export class ListaComponent {
+export class ListaComponent implements AfterViewInit{
 
   constructor(localStorage: LocalStoarageService, private db:DbService) {
    }
+
+   @ViewChild(BarcodeScannerLivestreamComponent)
+  barcodeScanner!: BarcodeScannerLivestreamComponent;
+
+  barcodeValue: any;
+  ngAfterViewInit(): void {
+   // this.barcodeScanner.start();
+  }
+
+  onValueChanges(result: { codeResult: { code: any; }; }) {
+    this.codbarra = result.codeResult.code;
+    console.log(this.codbarra)
+  }
+
+  onStarted(started: any) {
+     console.log("Inicio")
+  }
+
+  onDesative(){
+    this.barcodeScanner.stop();
+  }
+
+  onKey(event: any) { // without type info
+    if(event.target.value != null)
+    this.barcodeScanner.stop();
+  }
 
   codbarra?:string;
   nome?:string;
@@ -33,6 +60,7 @@ export class ListaComponent {
       this.id = x.id
       this.habilita = false
      }
+     this.barcodeScanner.start();
    }
 
     digitar():void{

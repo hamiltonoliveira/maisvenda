@@ -1,13 +1,20 @@
 <div class="container">
   <div *ngIf="LojaNome">
-    <span class="lojaDescricao">{{ LojaNome }}</span>
     <!--
+    <span class="lojaDescricao">{{ LojaNome }}</span>
+
     <app-display-lojas></app-display-lojas>
     -->
   </div>
 
-
-  <video class="video"></video>
+  <div fxLayoutGap="50px">
+    <barcode-scanner-livestream
+      type="ean"
+      (valueChanges)="onValueChanges($event)"
+      (started)="(onStarted)"
+    >
+    </barcode-scanner-livestream>
+  </div>
 
   <mat-form-field appearance="outline">
     <mat-label>Código de barra</mat-label>
@@ -18,6 +25,7 @@
       matInput
       placeholder="Código do produto"
       disabled="{{ habilita }}"
+      (keyup)="onKey($event)"
     />
   </mat-form-field>
 
@@ -85,10 +93,9 @@
       <span>Avitar</span>
     </button>
 
-    <button mat-menu-item>
+    <button mat-menu-item (click)="onDesative()">
       <mat-icon>videocam_off</mat-icon>
       <span>Desativar</span>
     </button>
   </mat-menu>
 </div>
-

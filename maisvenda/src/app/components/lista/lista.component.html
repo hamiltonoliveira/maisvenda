@@ -1,18 +1,18 @@
 <div class="container">
   <div *ngIf="LojaNome">
     <span class="lojaDescricao">Mercado:{{ LojaNome }}</span>
+    <app-display-lojas></app-display-lojas>
   </div>
 
-  <app-display-lojas></app-display-lojas>
 
   <mat-form-field appearance="outline">
     <mat-label>Código de barra</mat-label>
-    <input required="true" autofocus [(ngModel)]="codbarra" name="codbarra" matInput placeholder="Código do produto" disabled="{{ habilita }}" />
+    <input autofocus [(ngModel)]="codbarra" name="codbarra" matInput placeholder="Código do produto" disabled="{{ habilita }}" />
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Nome do produto</mat-label>
-    <input required="true" [(ngModel)]="nome"  name="nome" matInput placeholder="Nome" disabled="{{ habilita }}" />
+    <input [(ngModel)]="nome"  name="nome" matInput placeholder="Nome" disabled="{{ habilita }}" />
   </mat-form-field>
 
   <mat-form-field appearance="outline">
@@ -26,7 +26,6 @@
       mask="separator.2"
       thousandSeparator="."
       [(ngModel)]="preco"
-      required="true"
     />
   </mat-form-field>
 
@@ -42,7 +41,6 @@
       max="5"
       name="quantidade"
      [(ngModel)]="quantidade"
-     required="true"
     />
   </mat-form-field>
 
@@ -58,7 +56,7 @@
       </button>
     </mat-tab>
   </mat-tab-group>
-</div>
+
 
 <mat-menu #menu="matMenu">
   <button mat-menu-item (click)="selected()">
@@ -71,3 +69,4 @@
     <span>Desativar</span>
   </button>
 </mat-menu>
+</div>

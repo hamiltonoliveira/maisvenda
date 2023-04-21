@@ -36,8 +36,11 @@ export class ListaComponent {
    }
 
     digitar():void{
-     this.db.addRecord(this.id,this.codbarra,this.nome,this.preco,this.quantidade)
-     this.limpaCampos()
+     if(this.codbarra && this.nome && this.preco && this.quantidade)
+     {
+      this.db.addRecord(this.id,this.codbarra,this.nome,this.preco,this.quantidade)
+      this.limpaCampos()
+     }
    }
 
    limpaCampos():void{

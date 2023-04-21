@@ -4,15 +4,29 @@
     <app-display-lojas></app-display-lojas>
   </div>
 
+  <video class="video"></video>
 
   <mat-form-field appearance="outline">
     <mat-label>Código de barra</mat-label>
-    <input autofocus [(ngModel)]="codbarra" name="codbarra" matInput placeholder="Código do produto" disabled="{{ habilita }}" />
+    <input
+      autofocus
+      [(ngModel)]="codbarra"
+      name="codbarra"
+      matInput
+      placeholder="Código do produto"
+      disabled="{{ habilita }}"
+    />
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Nome do produto</mat-label>
-    <input [(ngModel)]="nome"  name="nome" matInput placeholder="Nome" disabled="{{ habilita }}" />
+    <input
+      [(ngModel)]="nome"
+      name="nome"
+      matInput
+      placeholder="Nome"
+      disabled="{{ habilita }}"
+    />
   </mat-form-field>
 
   <mat-form-field appearance="outline">
@@ -40,7 +54,7 @@
       min="1"
       max="5"
       name="quantidade"
-     [(ngModel)]="quantidade"
+      [(ngModel)]="quantidade"
     />
   </mat-form-field>
 
@@ -51,22 +65,26 @@
       </button>
     </mat-tab>
     <mat-tab label="Digitação">
-      <button mat-mini-fab color="accent" (click)="digitar()" disabled="{{ habilita }}">
+      <button
+        mat-mini-fab
+        color="accent"
+        (click)="digitar()"
+        disabled="{{ habilita }}"
+      >
         <mat-icon>post_add</mat-icon>
       </button>
     </mat-tab>
   </mat-tab-group>
 
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="selected()">
+      <mat-icon>videocam</mat-icon>
+      <span>Avitar</span>
+    </button>
 
-<mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="selected()">
-    <mat-icon>videocam</mat-icon>
-    <span>Avitar</span>
-  </button>
-
-  <button mat-menu-item>
-    <mat-icon>videocam_off</mat-icon>
-    <span>Desativar</span>
-  </button>
-</mat-menu>
+    <button mat-menu-item>
+      <mat-icon>videocam_off</mat-icon>
+      <span>Desativar</span>
+    </button>
+  </mat-menu>
 </div>

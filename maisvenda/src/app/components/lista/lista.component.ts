@@ -35,11 +35,6 @@ export class ListaComponent implements AfterViewInit{
     this.barcodeScanner.stop();
   }
 
-  onKey(event: any) { // without type info
-    if(event.target.value != null)
-    this.barcodeScanner.stop();
-  }
-
   codbarra?:string;
   nome?:string;
   preco?:string;
@@ -50,7 +45,6 @@ export class ListaComponent implements AfterViewInit{
   Loja?:any
   LojaNome?:string
   id:number= 0
-  habilita:boolean = true
 
   async selected(){
     if(localStorage.getItem('Loja')){
@@ -58,7 +52,6 @@ export class ListaComponent implements AfterViewInit{
       let x = JSON.parse(this.Loja)
       this.LojaNome = x.nome
       this.id = x.id
-      this.habilita = false
      }
      this.barcodeScanner.start();
    }
@@ -66,7 +59,8 @@ export class ListaComponent implements AfterViewInit{
     digitar():void{
      if(this.codbarra && this.nome && this.preco && this.quantidade)
      {
-      this.db.addRecord(this.id,this.codbarra,this.nome,this.preco,this.quantidade)
+      let date = new Date().toLocaleDateString()
+      this.db.addRecord(date,this.id,this.codbarra,this.nome,this.preco,this.quantidade)
       this.limpaCampos()
      }
    }

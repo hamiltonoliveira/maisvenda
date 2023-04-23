@@ -73,7 +73,7 @@ myDatabase.deleteRecordById(1).then(() => {
 dica: 
 
 
-http-server /dist/maisvenda/index.html
+http-server -o
 
 
 

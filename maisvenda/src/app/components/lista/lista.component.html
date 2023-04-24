@@ -1,6 +1,6 @@
 <div class="container">
-  <mat-card class="codbarra">
-    <mat-card-content>
+  <mat-card>
+    <mat-card-content  class="codbarra">
       <barcode-scanner-livestream
         type="ean"
         (valueChanges)="onValueChanges($event)"
@@ -9,6 +9,8 @@
       </barcode-scanner-livestream>
     </mat-card-content>
   </mat-card>
+
+  <mat-divider></mat-divider>
 
   <div class="scroller">
   <mat-form-field appearance="outline" class="full-width">

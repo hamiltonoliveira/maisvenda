@@ -3,6 +3,8 @@ import { DbService } from 'src/app/service/db.service';
 import { LocalStoarageService } from 'src/app/service/local-stoarage.service';
 
 import { BarcodeScannerLivestreamComponent } from "ngx-barcode-scanner";
+import { ProdutoService } from 'src/app/service/produto.service';
+import { IProduto } from 'src/app/interfaces/Produto';
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
@@ -10,9 +12,10 @@ import { BarcodeScannerLivestreamComponent } from "ngx-barcode-scanner";
 })
 
 export class ListaComponent implements AfterViewInit{
+  private retornaProduto:IProduto[]=[]
 
-  constructor(localStorage: LocalStoarageService, private db:DbService) {
-   }
+  constructor(localStorage: LocalStoarageService, private db:DbService, private produtoService: ProdutoService)
+   {}
 
    @ViewChild(BarcodeScannerLivestreamComponent)
   barcodeScanner!: BarcodeScannerLivestreamComponent;
@@ -24,7 +27,17 @@ export class ListaComponent implements AfterViewInit{
 
   onValueChanges(result: { codeResult: { code: any; }; }) {
     this.codbarra = result.codeResult.code;
-    console.log(this.codbarra)
+    this.onProduto(this.codbarra);
+    console.log(this.codbarra);
+   }
+
+  onProduto(codigo:any)
+  {
+    this.produtoService.list(codigo).subscribe(dados=>
+    {
+      this.retornaProduto=dados
+      console.log(this.retornaProduto)
+    });
   }
 
   onStarted(started: any) {

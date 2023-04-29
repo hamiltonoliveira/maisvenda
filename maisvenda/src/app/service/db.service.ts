@@ -18,6 +18,6 @@ export class DbService extends Dexie {
     .then(data => console.log("DB Opened"))
     .catch(err => console.log(err.message))
      this.table('listaTB')
-    .add({_date,codmercado:_codmercado, codbarra: _codbarra, nome: _nome, preco:_preco, quantidade:_quantidade})
+    .add({date:_date,codmercado:_codmercado, codbarra: _codbarra, nome: _nome, preco:_preco, quantidade:_quantidade})
   }
 }

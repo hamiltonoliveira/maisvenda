@@ -36,6 +36,8 @@ import { NgxMaskModule } from 'ngx-mask';
 import { DisplayLojasComponent } from './components/display-lojas/display-lojas.component';
 
 import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TokenInterceptor } from './service/token.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,10 +74,14 @@ import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false // ao salvar, vai manter a mascara
     }),
-
+    HttpClientModule
   ],
   providers: [
-
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi:true
+    }
   ],
   bootstrap: [AppComponent]
 })

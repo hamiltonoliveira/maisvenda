@@ -4,7 +4,6 @@ import { LocalStoarageService } from 'src/app/service/local-stoarage.service';
 
 import { BarcodeScannerLivestreamComponent } from "ngx-barcode-scanner";
 import { ProdutoService } from 'src/app/service/produto.service';
-import { IProduto } from 'src/app/interfaces/Produto';
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
@@ -12,8 +11,7 @@ import { IProduto } from 'src/app/interfaces/Produto';
 })
 
 export class ListaComponent implements AfterViewInit{
-  private retornaProduto:IProduto[]=[]
-
+  private produto:any
   constructor(localStorage: LocalStoarageService, private db:DbService, private produtoService: ProdutoService)
    {}
 
@@ -27,16 +25,22 @@ export class ListaComponent implements AfterViewInit{
 
   onValueChanges(result: { codeResult: { code: any; }; }) {
     this.codbarra = result.codeResult.code;
-    this.onProduto(this.codbarra);
-    console.log(this.codbarra);
+    if(result){
+      this.onProduto(this.codbarra);
+    }
    }
 
   onProduto(codigo:any)
   {
     this.produtoService.list(codigo).subscribe(dados=>
     {
-      this.retornaProduto=dados
-      console.log(this.retornaProduto)
+      this.produto = dados
+      if(this.produto.origin='COSMOS')
+      {
+      console.log(this.produto)
+      this.nome = this.produto.description
+      this.textoarea =  this.produto.price
+      }
     });
   }
 
@@ -52,6 +56,7 @@ export class ListaComponent implements AfterViewInit{
   nome?:string;
   preco?:string;
   quantidade?:string;
+  textoarea?:string;
 
   localStorage: any;
 
@@ -83,6 +88,7 @@ export class ListaComponent implements AfterViewInit{
     this.nome="";
     this.preco="";
     this.quantidade="";
+    this.textoarea="";
    }
 
 }

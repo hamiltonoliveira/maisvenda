@@ -7,7 +7,6 @@
  margin-right: 10px;
  height: 100%;
 }
-
 .lojaDescricao{
   position: absolute;
   top:15px;
@@ -39,7 +38,15 @@
   height: 50px;
   margin: 6px;
 }
-
+.texto-area{
+  justify-content: center;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  margin-left: 2px;
+  padding: 8px;
+}
 .codbarra{
   flex-direction: row;
   position: relative;
@@ -48,6 +55,15 @@
   max-width: 98%;
   background-color: whitesmoke;
 }
+
+video {
+  object-fit: contain;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+.scanner{position:relative}.scanner video,.scanner canvas{width:50%;height:100%}.scanner canvas.drawingBuffer{position:absolute;left:0;top:0}
+
+
 
 
 

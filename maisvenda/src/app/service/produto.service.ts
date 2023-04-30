@@ -10,7 +10,6 @@ export class ProdutoService {
   constructor(private http: HttpClient) { }
 
   list(codigoPro:string){
-    return this.http.get<IProduto[]>(this.API + `${codigoPro}`+'.json')
+    return this.http.get(this.API + `${codigoPro}`+'.json')
   }
-
 }

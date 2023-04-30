@@ -24,6 +24,10 @@
     />
   </mat-form-field>
 
+  <div class="texto-area">
+    {{textoarea}}
+  </div>
+
   <mat-form-field appearance="outline" class="full-width">
     <mat-label>Nome do produto</mat-label>
     <input [(ngModel)]="nome" name="nome" matInput placeholder="Nome" />
@@ -72,7 +76,7 @@
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="selected()">
       <mat-icon>videocam</mat-icon>
-      <span>Avitar</span>
+      <span>Ativar</span>
     </button>
 
     <button mat-menu-item (click)="onDesative()">
@@ -81,7 +85,5 @@
     </button>
   </mat-menu>
 </div>
-
-
 </div>
 

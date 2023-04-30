@@ -39,7 +39,10 @@ export class ListaComponent implements AfterViewInit{
       {
       console.log(this.produto)
       this.nome = this.produto.description
-      this.textoarea =  this.produto.price
+        if(this.produto.price)
+         {
+          this.textoarea =  this.produto.price
+         }
       }
     });
   }

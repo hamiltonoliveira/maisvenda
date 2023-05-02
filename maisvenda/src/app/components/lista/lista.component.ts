@@ -41,7 +41,7 @@ export class ListaComponent implements AfterViewInit{
       this.nome = this.produto.description
         if(this.produto.price)
          {
-          this.textoarea =  this.produto.price
+          this.precoMedia =  this.produto.price
          }
       }
     });
@@ -59,7 +59,7 @@ export class ListaComponent implements AfterViewInit{
   nome?:string;
   preco?:string;
   quantidade?:string;
-  textoarea?:string;
+  precoMedia?:string;
 
   localStorage: any;
 
@@ -81,7 +81,7 @@ export class ListaComponent implements AfterViewInit{
      if(this.codbarra && this.nome && this.preco && this.quantidade)
      {
       let date = new Date().toLocaleDateString()
-      this.db.addRecord(date,this.id,this.codbarra,this.nome,this.preco,this.quantidade)
+      this.db.addRecord(date,this.id,this.codbarra,this.nome,this.preco,this.quantidade,this.precoMedia)
       this.limpaCampos()
      }
    }
@@ -91,7 +91,7 @@ export class ListaComponent implements AfterViewInit{
     this.nome="";
     this.preco="";
     this.quantidade="";
-    this.textoarea="";
+    this.precoMedia="";
    }
 
 }

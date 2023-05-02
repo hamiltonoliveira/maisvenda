@@ -13,11 +13,11 @@ export class DbService extends Dexie {
     });
   }
 
- addRecord(_date:any, _codmercado:any, _codbarra:any, _nome:any, _preco:any, _quantidade:any ): void {
+ addRecord(_date:any, _codmercado:any, _codbarra:any, _nome:any, _preco:any, _quantidade:any, _precoMedia:any ): void {
    this.open()
     .then(data => console.log("DB Opened"))
     .catch(err => console.log(err.message))
      this.table('listaTB')
-    .add({date:_date,codmercado:_codmercado, codbarra: _codbarra, nome: _nome, preco:_preco, quantidade:_quantidade})
+    .add({date:_date,codmercado:_codmercado, codbarra: _codbarra, nome: _nome, preco:_preco, quantidade:_quantidade, preco_media:_precoMedia})
   }
 }
